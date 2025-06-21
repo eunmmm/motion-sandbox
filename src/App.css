@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden;
+}
+
+.app-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.animated-text {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: inherit;
+  text-align: center;
+}
+
+.char {
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+}
+
+/* 스크롤바 스타일링 */
+.app-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.app-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.app-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.app-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}
